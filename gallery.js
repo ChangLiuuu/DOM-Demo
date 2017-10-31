@@ -7,11 +7,17 @@ function showPic(whichpic) {
 }
 
 /*
+Chapter 7
+
+0 document.write()
 1 document.createElement('p')
 2 document.createTextNode('Hello world')
 3 appendChild()
 4 insertBefore(new node, ref node);
 5 node.nextSibling  //平行的下一个node
+6 node.setAttribute("src/alt/id", "img/a.gif / This is a cat. / cat")
+7 var link = document.getElementsByTagName('a');  link[];
+
 **/
 function load() {
     var para = document.createElement('p');
@@ -22,11 +28,10 @@ function load() {
     var txt3 = document.createTextNode("TestAfter... ");
     para.appendChild(txt);
     txt.parentNode.insertBefore(txt2, txt);
-
     insertAfter(txt3, txt2);
 
 }
-
+// my own script
 function insertAfter(newNode, refNode) {
     if(refNode.parentNode.lastChild === refNode) {
         refNode.parentNode.appendChild(newNode);
@@ -34,4 +39,18 @@ function insertAfter(newNode, refNode) {
         refNode.parentNode.insertBefore(newNode, refNode.nextSibling);
     }
 }
+
+/*
+Chapter 8
+
+0 document.write()
+1 document.createElement('p')
+2 document.createTextNode('Hello world')
+3 appendChild()
+4 insertBefore(new node, ref node);
+5 node.nextSibling  //平行的下一个node
+6 node.setAttribute("src/alt/id", "img/a.gif / This is a cat. / cat")
+7 var link = document.getElementsByTagName('a');  link[];
+
+**/
 
