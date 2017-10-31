@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pic gallery</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body onload="load()">
+<ol>
+	<li><a href="imgs/dice-1.png" title="one" onclick="showPic(this); return false;">dice_1</a></li>
+	<li><a href="imgs/dice-2.png" title="two" onclick="showPic(this); return false;">dice_2</a></li>
+	<li><a href="imgs/dice-3.png" title="three" onclick="showPic(this); return false;">dice_3</a></li>
+</ol>
+<img id="pic-holder" src="" alt="" style="width: 100px; height: 100px">
+<script src="gallery.js"></script>
+
+
+<header>Head</header>
+<div class="contain">
+
+	<div class="mid">
+		<div class="mid-inner">中 width: 100% (父类contain的content-length); height: 300px</div>
+	</div>
+
+	<div class="left">左 width: 150px; height: 200px</div>
+	<div class="right">右 width: 200px; height: 200px</div>
+</div>
+<footer>Footer</footer>
+
+<div id="test"></div>
+
+</body>
+</html>

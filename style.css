@@ -1,0 +1,48 @@
+
+header {
+  width: 100%;
+  height: 30px;
+  background-color: red;
+}
+
+footer {
+  width: 100%;
+  height: 30px;
+  background-color: black;
+  clear : both;
+
+}
+
+.contain {
+  height: 200px;
+}
+
+.left {
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 200px;
+  background-color: #B0F566;
+  margin-left: -100%;
+}
+
+.mid {
+  float: left;
+  width: 100%;
+}
+
+.right {
+  position: relative;
+  float: left;
+  height: 200px;
+  width: 200px;
+  background-color: #5CC9F5;
+  margin-left: -200px;
+}
+
+
+.mid-inner {
+  margin: 0 200px 0 150px;
+  background-color: #F78AE0;
+  height: 300px;
+}
