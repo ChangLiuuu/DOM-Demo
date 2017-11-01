@@ -43,14 +43,26 @@ function insertAfter(newNode, refNode) {
 /*
 Chapter 8
 
-0 document.write()
-1 document.createElement('p')
-2 document.createTextNode('Hello world')
-3 appendChild()
-4 insertBefore(new node, ref node);
-5 node.nextSibling  //平行的下一个node
-6 node.setAttribute("src/alt/id", "img/a.gif / This is a cat. / cat")
-7 var link = document.getElementsByTagName('a');  link[];
-
 **/
 
+/*
+Chapter 9 CSS-DOM
+
+内嵌css检索属性：
+para = document.getElementById('example');
+para.style.fontFamily // NOT .font-family
+
+递归查找下一个element:
+getNextElement(node);
+
+document.getElementByTagName("h1"); //得到的是一个数组。
+
+**/
+function getNextElement(node) {
+    if (node.nodeType === 1) {
+        return node;
+    }
+    if (node.nextSibling) {
+        return getNextElement(node.nextSibling);
+    }
+}
