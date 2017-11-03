@@ -1,7 +1,7 @@
 function showPic(whichpic) {
     var source = whichpic.getAttribute("href");
     var holder = document.getElementById("pic-holder").setAttribute("src", source);
-    var text =whichpic.getAttribute("title");
+    var text = whichpic.getAttribute("title");
     var description = document.getElementById("description");
     description.firstChild.nodeValue = text;
 }
@@ -31,9 +31,10 @@ function load() {
     insertAfter(txt3, txt2);
 
 }
+
 // my own script
 function insertAfter(newNode, refNode) {
-    if(refNode.parentNode.lastChild === refNode) {
+    if (refNode.parentNode.lastChild === refNode) {
         refNode.parentNode.appendChild(newNode);
     } else {
         refNode.parentNode.insertBefore(newNode, refNode.nextSibling);
@@ -57,6 +58,15 @@ getNextElement(node);
 
 document.getElementByTagName("h1"); //得到的是一个数组。
 
+
+Chapter 10 CSS 动画
+
+setTimeout()函数
+
+把函数赋值是个好想法：
+variable = setTimeout("function", interval);
+
+
 **/
 function getNextElement(node) {
     if (node.nodeType === 1) {
@@ -65,4 +75,41 @@ function getNextElement(node) {
     if (node.nextSibling) {
         return getNextElement(node.nextSibling);
     }
+
 }
+
+// example of moveElement
+
+function moveElement(eleID, final_x, final_y, interval) {
+    var p_var = document.createElement('p');
+    var text = document.createTextNode("MOVE");
+    p_var.appendChild(text);
+    document.getElementById(eleID).appendChild(p_var);
+    var mo = document.getElementById(eleID);
+    mo.style.position = "absolute";
+
+    var x = parseFloat(mo.style.left);
+    var y = parseFloat(mo.style.top);
+
+    if (x === final_x && y === final_y) {
+        return true;
+    }
+    if (x > final_x) {
+        x--;
+    }
+    if (y > final_y) {
+        y--;
+    }
+    if (x < final_x) {
+        x++;
+    }
+    if (y < final_y) {
+        y++;
+    }
+    mo.style.left = x + 'px';
+    mo.style.top = y + 'px';
+
+var repeat = "moveElement('" + eleID + "'," + final_x + "," + final_y + "," + interval + ")";
+setTimeout(repeat, interval);
+}
+
