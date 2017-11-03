@@ -95,19 +95,19 @@ function moveElement(eleID, final_x, final_y, interval) {
         return true;
     }
     if (x > final_x) {
-        x--;
+        x = x - 5;
     }
     if (y > final_y) {
-        y--;
+        y = y - 5;
     }
     if (x < final_x) {
-        x++;
+        x = x + 5;
     }
     if (y < final_y) {
-        y++;
+        y = y + 5;
     }
-    mo.style.left = x + 'px';
-    mo.style.top = y + 'px';
+    mo.style.left = x + "px";
+    mo.style.top = y + "px";
 
 var repeat = "moveElement('" + eleID + "'," + final_x + "," + final_y + "," + interval + ")";
 setTimeout(repeat, interval);
